@@ -5,8 +5,8 @@ help:
 
 lint:
 	@echo "Running content style checks"
-	bash test/content/code_style.sh
-	python3 test/content/goals.py
+	bash scripts/nb_lint.sh
+	python3 scripts/goals.py
 
 nbclean:
 	@echo "Cleaning notebook diffs relative to origin/main"

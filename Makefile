@@ -10,8 +10,8 @@ lint:
 
 nbclean:
 	@echo "Cleaning notebook diffs relative to origin/main"
-	python3 test/content/nbclean.py
+	python3 scripts/nb_clean_diff.py
 
 nbclean-test:
 	@echo "Checking notebooks against origin/main"
-	python3 test/content/nbclean.py --check
+	python3 scripts/nb_clean_diff.py --check

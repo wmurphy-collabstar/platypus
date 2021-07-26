@@ -15,6 +15,7 @@ def nbclean(filename, diff_str, check=False):
         2: Check did not pass (i.e. script needs running on this notebook)
     """
     diff_lines = diff_str.split('\n')
+    # Start by fixing SVG outputs
     # collect candidates for reverting
     i = 0
     replacements = []
@@ -43,12 +44,13 @@ def nbclean(filename, diff_str, check=False):
                 print(f"  - {before}\n  + {after}\nRun `make nbclean` to fix.")
                 return 2
             in_f = in_f.replace(after, before)
+    # Now fix execution_count values
     in_f = in_f.split('\n')
     ex_count = 1
     for line in range(len(in_f)):
         if in_f[line].lstrip().startswith('"execution_count":'):
             if check:
-                if int(line.split(':')[1][:-1]) != ex_count:
+                if int(in_f[line].split(':')[1][:-1]) != ex_count:
                     print(f"Cell execution count in wrong order in {filename}")
                     print("Run `make nbclean` to fix.")
                     return 2

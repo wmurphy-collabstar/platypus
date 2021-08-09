@@ -14,19 +14,27 @@ describe('Language Selector Macbook-15', () => {
       .reload()
   })
 
-  it('Select different language', () => {
+  it('Select a non-English language', () => {
     // navigate to page w/ translations
     cy.url().should('include', '/ch-prerequisites/introduction-to-python-and-jupyter-notebooks')
     // select Japanese
     cy.get('.language-selector__dropdown').shadow().find('.bx--list-box__field').click()
-    cy.get('.language-selector__dropdown > .language-selector__item').next().click()
+    cy.get('.language-selector__dropdown > .language-selector__item').contains('Japanese').click()
 
     cy.url().should('include', '?hl=ja')
+    cy.get('.language-selector__dropdown')
+      .shadow()
+      .find('#trigger-label')
+      .should('have.text', 'Japanese')
 
-    // select English
+    // // select English
     cy.get('.language-selector__dropdown').shadow().find('.bx--list-box__field').click()
-    cy.get('.language-selector__dropdown > .language-selector__item').first().click()
+    cy.get('.language-selector__dropdown > .language-selector__item').contains('English').click()
 
     cy.url().should('not.include', '?hl')
+    cy.get('.language-selector__dropdown')
+      .shadow()
+      .find('#trigger-label')
+      .should('have.text', 'English')
   })
 })

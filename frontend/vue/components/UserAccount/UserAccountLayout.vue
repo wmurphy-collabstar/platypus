@@ -27,7 +27,7 @@
     </nav>
     <section class="user-account__section-container">
       <div v-if="activeSection === sectionList[0].hash">
-        PROGRESS SECTION
+        <UserProgress />
       </div>
       <div v-if="activeSection === sectionList[1].hash">
         GROUPS SECTION
@@ -45,11 +45,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
 import AppLink from '../common/AppLink.vue'
+import UserProgress from './UserProgress.vue'
 
 export default defineComponent({
   name: 'UserAccountLayout',
   components: {
-    AppLink
+    AppLink,
+    UserProgress
   },
   props: {
     userName: { type: String, required: false, default: 'Unknown' },

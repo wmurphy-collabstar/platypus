@@ -359,3 +359,11 @@
     - title: Variational Classification
       id: variational-classification
       url: /quantum-machine-learning/vqc
+
+- title: Developer Certification Course
+  url: /dev-cert
+  type: learning-path
+  sections:
+    - title: Topic1
+      id: topic-1
+      url: /dev-cert/topic1

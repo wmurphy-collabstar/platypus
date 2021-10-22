@@ -364,6 +364,26 @@
   url: /dev-cert
   type: learning-path
   sections:
-    - title: Topic1
-      id: topic-1
-      url: /dev-cert/topic1
+    - title: Getting Access to Qiskit
+      id: getting-access-to-qiskit
+      url: /dev-cert/getting-access-to-qiskit
+    - title: Analyzing States
+      id: analyzing-states
+      url: /dev-cert/analyzing-states
+    - title: Creating a Circuit
+      id: creating-a-circuit
+      url: /dev-cert/creating-a-circuit
+    - title: Sending Jobs
+      id: sending-jobs
+      url: /dev-cert/sending-jobs
+    - title: Retrieving Results
+      id: retrieving-results
+      url: /dev-cert/retrieving-results
+    - title: Visualizations
+      id: visualizations
+      url: /dev-cert/visualizations
+    - title: Other Important Modules
+      id: other-important-modules
+      url: /dev-cert/other-important-modules
+
+

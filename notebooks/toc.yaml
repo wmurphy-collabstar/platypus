@@ -361,7 +361,7 @@
       url: /quantum-machine-learning/vqc
 
 - title: Developer Certification Course
-  url: /developer
+  url: /dev-cert
   type: learning-path
   sections:
     - title: Getting Access to Qiskit
